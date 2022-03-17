@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #F0FFFF;
+   color: black;
+   text-align: center;
+}
+</style>
+	<head>
+		<meta charset="utf-8">
+		<title>Arabic Dialect Identification NLP Task</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="../static/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="../static/css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<form action="/predict" method="POST">
+					<h3>Arabic Dialect Identification</h3>
+					<p>Start with Enter The Tweet and Predict Which Dialect by Using LinearSVC Classifier and Balanced Class Weight Model.</p>
+					<!-- <label class="form-group">
+						<input type="text" class="form-control"  required>
+						<span>Your Name</span>
+						<span class="border"></span>
+					</label> -->
+					<!-- <label class="form-group">
+						<input type="text" class="form-control"  required>
+						<span for="">Your Mail</span>
+						<span class="border"></span>
+					</label> -->
+					<label class="form-group" >
+						<textarea name="tweet" id="" class="form-control" data-form-field="tweet" required></textarea>
+						<span for="">Enter Your Tweet</span>
+						<span class="border"></span>
+					</label>
+					<button>Predict 
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+				{% if dialect %}
+                    <p style='text-align: center;margin-top: 15px;font-size: large;'>Your Dialect is: <b style="color: #b81032;">
+                    {{ dialect }}</b>.</p>
+                {% endif %}
+			</div>
+		</div>
+	
+
+<div class="footer">
+        Designed by <a href="https://mohamed-sebaie.herokuapp.com/">Mohamed Sebaie</a>
+        <br><br>
+      </div>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
